@@ -2,14 +2,6 @@
 
 A GenAI-assisted guide for families and communities facing severe winter smog. Enter your city, today's AQI, household and routine. You get low-emission routines, indoor air hacks and sustainable swaps, each with **why it helps** and **what it changes**.
 
-## Run
-```
-npm install
-ANTHROPIC_API_KEY=your-key npm start   # key is optional; app runs at http://localhost:3000
-npm test
-```
-Without an API key the app still works: the rule-based plan is always returned and the AI summary is skipped.
-
 ## How it maps to the judging parameters
 - **Problem statement alignment**: location (city + live AQI band), lifestyle (commute, heating, cooking, household), routines, indoor air hacks, sustainable alternatives, community actions, and an impact explanation on every item.
 - **Code quality**: small modules (`validate`, `advice`, `llm`, `server`), pure functions, dependency injection for tests, no unused code.
