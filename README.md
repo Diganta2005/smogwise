@@ -1,6 +1,29 @@
 # SmogWise
 
 A GenAI-assisted guide for families and communities facing severe winter smog. Enter your city, today's AQI, household and routine. You get low-emission routines, indoor air hacks and sustainable swaps, each with **why it helps** and **what it changes**.
+## Run locally
+
+Requires Node.js 18 or newer.
+
+```
+git clone https://github.com/Diganta2005/smogwise.git
+cd smogwise
+npm install
+npm start
+```
+
+Then open **http://localhost:3000** in your browser.
+
+Run the tests:
+```
+npm test
+```
+
+Optional: turn on the AI-written summary by setting your Anthropic API key before `npm start`. The app works without it.
+- PowerShell: `$env:ANTHROPIC_API_KEY="your-key"`
+- macOS / Linux: `ANTHROPIC_API_KEY=your-key npm start`
+
+Live demo: https://smogwise.onrender.com
 
 ## How it maps to the judging parameters
 - **Problem statement alignment**: location (city + live AQI band), lifestyle (commute, heating, cooking, household), routines, indoor air hacks, sustainable alternatives, community actions, and an impact explanation on every item.
