@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SmogWise: clean-air plan for your household</title>
+  <meta name="description" content="Get a low-emission routine, indoor air tips and sustainable swaps for winter smog, with the impact of each choice explained.">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <header class="top">
+    <h1>SmogWise</h1>
+    <p>Tell us about your home and today's air. Get a plan that shows what each choice changes.</p>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <form id="plan-form" novalidate aria-describedby="form-status">
+      <fieldset>
+        <legend>Where and how bad is the air?</legend>
+        <div class="field">
+          <label for="city">City</label>
+          <input id="city" name="city" type="text" autocomplete="address-level2" required maxlength="80" aria-describedby="city-err">
+          <p class="err" id="city-err" role="alert"></p>
+        </div>
+        <div class="field">
+          <label for="aqi">Today's AQI (0 to 500)</label>
+          <input id="aqi" name="aqi" type="number" inputmode="numeric" min="0" max="500" step="1" required aria-describedby="aqi-hint aqi-err">
+          <p class="hint" id="aqi-hint">Find it on your local air-quality app or government site.</p>
+          <p class="err" id="aqi-err" role="alert"></p>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Who lives with you?</legend>
+        <label class="check"><input type="checkbox" name="children"> Children under 12</label>
+        <label class="check"><input type="checkbox" name="elderly"> Adults over 65</label>
+        <label class="check"><input type="checkbox" name="respiratory"> Someone with asthma, heart or lung conditions</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Your routine</legend>
+        <div class="field">
+          <label for="commute">Main way you travel</label>
+          <select id="commute" name="commute">
+            <option value="car">Car</option>
+            <option value="two_wheeler">Motorbike or scooter</option>
+            <option value="public">Public transport</option>
+            <option value="walk_bike">Walk or cycle</option>
+            <option value="work_from_home">Mostly at home</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="heating">Winter heating</label>
+          <select id="heating" name="heating">
+            <option value="electric">Electric</option>
+            <option value="gas">Gas</option>
+            <option value="wood_coal">Wood or coal</option>
+            <option value="none">None</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="cooking">Cooking fuel</label>
+          <select id="cooking" name="cooking">
+            <option value="lpg">LPG or piped gas</option>
+            <option value="induction_electric">Induction or electric</option>
+            <option value="biomass">Wood, dung or charcoal</option>
+          </select>
+        </div>
+        <label class="check"><input type="checkbox" name="hasPurifier"> We have an air purifier</label>
+        <div class="field">
+          <label for="notes">Anything else? (optional)</label>
+          <textarea id="notes" name="notes" rows="2" maxlength="300"></textarea>
+        </div>
+      </fieldset>
+
+      <button type="submit" id="submit">Get my clean-air plan</button>
+      <p id="form-status" class="hint" role="status"></p>
+    </form>
+
+    <section id="results" aria-live="polite" aria-labelledby="results-title" hidden>
+      <h2 id="results-title" tabindex="-1">Your plan</h2>
+      <p id="band" class="band"></p>
+      <p id="summary" class="summary"></p>
+      <p id="summary-note" class="hint" hidden>Summary written by AI from the plan below. Check it against the steps.</p>
+      <ol id="actions" class="actions"></ol>
+      <p id="disclaimer" class="hint"></p>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "name": "smogwise",
+  "version": "1.0.0",
+  "description": "GenAI-assisted winter smog guide for families and communities",
+  "main": "server.js",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test test/*.test.js",
+    "lint": "eslint . && node --check server.js",
+    "test:coverage": "node --test --experimental-test-coverage test/*.test.js",
+    "audit": "npm audit --omit=dev --audit-level=high"
+  },
+  "dependencies": {
+    "compression": "^1.8.2",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "axe-core": "^4.14.1",
+    "eslint": "^10.15.0",
+    "globals": "^17.14.0",
+    "jsdom": "^24.1.3"
+  }
+}
